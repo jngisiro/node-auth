@@ -1,4 +1,5 @@
 import loginValidator from "../../../server/validators/login";
+import Response from "../../utils/response";
 
 class Response {
   status(status) {
