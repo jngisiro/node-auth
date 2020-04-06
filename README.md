@@ -1,3 +1,3 @@
 # auth-app
 
-> my super-excellent project
+A sample nodejs authentication boilerplate with a react client
