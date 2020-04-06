@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 
+import { connect, disconnect } from "../../utils/mongoose";
 import User from "../../../server/models/User";
 import config from "../../../server/config/index";
 
@@ -16,10 +17,7 @@ describe("The User model", () => {
 
   // -------------------- SET UP ----------------------------------
   beforeAll(async () => {
-    await mongoose.connect("mongodb://localhost:27017/auth-app_test", {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await connect();
 
     newuser = await User.create(user);
   });
@@ -44,6 +42,6 @@ describe("The User model", () => {
 
   // ----------------------- CLEAN UP ---------------------------------
   afterAll(async () => {
-    await mongoose.connection.close();
+    await disconnect();
   });
 });
