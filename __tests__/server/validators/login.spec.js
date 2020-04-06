@@ -1,15 +1,5 @@
+import Response from "../../utils/response";
 import loginValidator from "../../../server/validators/login";
-
-class Response {
-  status(status) {
-    this.status = status;
-    return this;
-  }
-
-  json(data) {
-    return data;
-  }
-}
 
 describe("The login validator", () => {
   it("Should call the next function when validator succeeds", async () => {
