@@ -10,7 +10,7 @@
     "build:client": "webpack --production",
     "start": "node dist/index.js",
     "test": "jest",
-    "coveralls": "jest --coverage && cat ./__tests__/coverage/lcov.info | coveralls"
+    "coveralls": "jest --coverage && coveralls < coverage/lcov.info"
   },
   "dependencies": {
     "@fullstackjs/mail": "^1.0.7",
